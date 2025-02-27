@@ -33,6 +33,24 @@ Por lo tanto, se recomienda **encarecidamente** que guardes todos los ficheros n
 
 💡 *Para este laboratorio, nos enfocaremos en su uso básico para la edición y visualización de archivos HTML. Sin añadirle estilos ni JavaScript, eso lo haremos en futuros pasos*
 
+## 🔌 Extensiones recomendadas para Visual Studio Code
+
+Para mejorar tu experiencia de desarrollo en este laboratorio, te recomendamos instalar las siguientes extensiones en Visual Studio Code:
+
+### Live Preview (Microsoft)
+Esta extensión permite ver una vista previa en vivo de tu página web directamente en Visual Studio Code, facilitando la visualización de cambios en tiempo real.
+
+### Markdown All in One (Yu Zhang)
+Una herramienta completa para trabajar con archivos Markdown, que incluye atajos de teclado, vista previa en vivo y otras funcionalidades útiles.
+
+### JavaScript (ES6) Code Snippets
+Proporciona fragmentos de código para JavaScript ES6, ayudando a escribir código más rápido y eficiente con atajos de teclado.
+
+### REST Client
+Permite realizar peticiones HTTP directamente desde Visual Studio Code, ideal para probar APIs sin necesidad de herramientas externas.
+
+### ES Lint
+Una herramienta de análisis estático para identificar y corregir problemas en tu código JavaScript, asegurando que sigas las mejores prácticas y estándares de codificación.
 
 ## 1️⃣ Preparación del entorno
 
@@ -50,6 +68,8 @@ También puedes hacerlo con el menú contextual en el explorador de archivos de 
 1. Ponte en la carpeta que quieres usar como directorio de trabajo.
 2. Botón derecho del ratón.
 3. Selecciona `Abrir con Visual Studio Code`.
+
+
 
 
 ## 2️⃣ Creación de un archivo HTML
