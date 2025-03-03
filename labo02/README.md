@@ -1,391 +1,1025 @@
-# 🛠 Manual de Introducción a Postman
+# 🖥️ Laboratorio de HTML - FTI
 
-## 📚 Introducción
+## 📌 Introducción
 
-Postman es una de las herramientas más populares para trabajar con APIs. Es utilizada tanto por ingenieros de calidad (QA) como por desarrolladores para probar y automatizar solicitudes HTTP. En este manual, aprenderemos:
+En este laboratorio aprenderemos los fundamentos de **HTML (HyperText Markup Language)**, el lenguaje de marcado estándar para la creación de páginas web. Exploraremos la estructura básica de un documento HTML y practicaremos con las principales etiquetas.
 
-- La interfaz básica de Postman.
-- Cómo enviar solicitudes a una API y verificar sus respuestas.
-- Cómo enviar archivos mediante Postman.
-- Introducción a la automatización de pruebas con Postman.
+Para escribir y probar nuestro código, utilizaremos **Visual Studio Code (VS Code)**, un potente editor de código que facilita el desarrollo web.
+
+## 📝 Nota
+
+El producto del trabajo realizado en este laboratorio se utilizará en los siguientes laboratorios.  
+Por lo tanto, se recomienda **encarecidamente** que guardes todos los ficheros necesarios, especialmente:
+
+- **`index.html`**: Archivo principal de la página web.
+- **Recursos adicionales**: Todos los scripts, imágenes, estilos CSS u otros archivos que utilices.
+
+💡 *Mantener una estructura organizada te facilitará el trabajo en futuras sesiones.*
+
+---
+
+## 🛠️ Visual Studio Code
+
+### 🎯 ¿Qué es Visual Studio Code?
+
+**Visual Studio Code (VS Code)** es un editor de código fuente desarrollado por Microsoft. Es gratuito, de código abierto y está diseñado para ser ligero pero potente, con muchas características útiles para desarrolladores.
+
+### 🔹 Características principales:
+
+- **Multiplataforma** 🖥️: Disponible para Windows, macOS y Linux.
+- **Integración con Git y GitHub** 🛠️: Permite gestionar repositorios directamente desde el editor.
+- **Gran cantidad de extensiones** 🔌: Se pueden instalar plugins para añadir funcionalidades como resaltado de sintaxis, autocompletado y depuración.
+- **Editor de código más usado** 🌍: Actualmente, es el editor más popular entre los desarrolladores.
+
+💡 *Para este laboratorio, nos enfocaremos en su uso básico para la edición y visualización de archivos HTML. Sin añadirle estilos ni JavaScript, eso lo haremos en futuros pasos*
+
+## 🔌 Extensiones recomendadas para Visual Studio Code
+
+Para mejorar tu experiencia de desarrollo en este laboratorio, te recomendamos instalar las siguientes extensiones en Visual Studio Code:
+
+### Live Preview (Microsoft)
+Esta extensión permite ver una vista previa en vivo de tu página web directamente en Visual Studio Code, facilitando la visualización de cambios en tiempo real.
+
+### Markdown All in One (Yu Zhang)
+Una herramienta completa para trabajar con archivos Markdown, que incluye atajos de teclado, vista previa en vivo y otras funcionalidades útiles.
+
+### JavaScript (ES6) Code Snippets
+Proporciona fragmentos de código para JavaScript ES6, ayudando a escribir código más rápido y eficiente con atajos de teclado.
+
+### REST Client
+Permite realizar peticiones HTTP directamente desde Visual Studio Code, ideal para probar APIs sin necesidad de herramientas externas.
+
+### ES Lint
+Una herramienta de análisis estático para identificar y corregir problemas en tu código JavaScript, asegurando que sigas las mejores prácticas y estándares de codificación.
+
+## 1️⃣ Preparación del entorno
+
+Antes de comenzar a escribir código HTML, necesitamos configurar nuestro entorno de trabajo.
+
+### 📂 Elegir un directorio de trabajo
+Busca o crea una carpeta en tu equipo donde guardarás los archivos del laboratorio. Puedes llamarla, por ejemplo, `laboratorio-html`.
+
+### 🛠️ Abrir Visual Studio Code
+1. Abre **Visual Studio Code**.
+2. Selecciona **Archivo** → **Abrir carpeta** y elige la carpeta `laboratorio-html`.
+
+También puedes hacerlo con el menú contextual en el explorador de archivos de tu sistema operativo si lo tienes integrado.
+
+1. Ponte en la carpeta que quieres usar como directorio de trabajo.
+2. Botón derecho del ratón.
+3. Selecciona `Abrir con Visual Studio Code`.
 
 
-## 📋 Requisitos
-
-Para poder usar Postman, necesitas tener una cuenta en la plataforma. Puedes registrarte de forma gratuita o usar una cuenta de Google.
-
-## 💻 Instalación de Postman
-
-Si no estuviera instalado Postman en los ordenadores del laboratorio, puedes [instalarlo en tu propio ordenador](https://www.postman.com/downloads/). También existe una [versión online que puedes usar.](https://blog.postman.com/announcing-postman-for-the-web-now-in-open-beta/)
-
-Para instalar Postman, sigue estos pasos:
-
-1. Abre un navegador y busca **"Postman Download"**.
-2. Accede a la página de descargas de Postman y selecciona la versión compatible con tu sistema operativo (Windows, macOS, Linux).
-3. Descarga e instala Postman siguiendo las instrucciones en pantalla.
-4. Abre la aplicación y crea una cuenta si no tienes una. Si ya tienes una, inicia sesión. (Puedes usar una cuenta de Google para poder entrar)
-
-## 🗂 Creación de Colecciones
-
-Postman organiza las solicitudes en colecciones. Una colección es un grupo de solicitudes que facilitan la gestión de pruebas y automatización.
-
-1. En la barra lateral izquierda, haz clic en **"New Collection"**.
-2. Asigna un nombre, por ejemplo, **"Prueba FTI"**.
-3. Agrega solicitudes dentro de esta colección para organizarlas mejor.
-
-<div style="text-align: center;">
-  <img src="img/01 - CreateCollection.PNG" alt="Crear Colección">
-</div>
 
 
-## 🗒 Crear una nueva request
+## 2️⃣ Creación de un archivo HTML
 
-Pulsa en el texto "Add a request" o ponte encima de la colección, botón derecho y "Add Request".
+1. En Visual Studio Code, haz clic en **Nuevo archivo**.
+2. Nómbralo `index.html`.
+3. Ábrelo y añade algunas etiquetas básicas de HTML:
 
-
-<div style="text-align: center;">
-  <img src="img/02 - New Request.PNG" alt="Nueva request">
-</div>
-
-## 🗒 Enviar una Solicitud GET
-
-Vamos a hacer una primera prueba y enviar una solicitud GET a una API pública:
-
-1. Ponle un nombre a la request, yo la he llamado **"Get a API pública"**.
-2. Selecciona el método **GET**.
-3. Introduce la URL de la API. Por ejemplo:
-
-   ```
-   https://randomuser.me/api/
-   ```
-
-4. Presiona **Send** y observa la respuesta en formato JSON.
-
-
-<div style="text-align: center;">
-  <img src="img/03 - Send Request.PNG" alt="Send request">
-</div>
-
-
-Ejemplo de respuesta JSON:
-
-```JSON
-{
-  "results": [
-    {
-      "gender": "male",
-      "name": {
-        "title": "Mr",
-        "first": "John",
-        "last": "Doe"
-      },
-      "email": "johndoe@example.com"
-    }
-  ]
-}
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi primera página HTML</title>
+</head>
+<body>
+    <h1>¡Hola, mundo!</h1>
+    <h2>Este es un subtítulo</h2>
+    <p>Este es un párrafo con algo de texto de prueba.</p>
+</body>
+</html>
 ```
 
-En la imagen de abajo se puede ver la respuesta (Response) de la API en la interfaz de Postman.
+4. Guarda el archivo (`Ctrl + S` o `Cmd + S` en Mac).
+5. Abre el archivo en un navegador haciendo doble clic sobre él.
+
+## 3️⃣ Creación rápida con Emmet
+
+### ⚡ ¿Qué es Emmet?
+
+Emmet es una herramienta que permite escribir código HTML y CSS de manera más rápida utilizando atajos y expansiones automáticas. Es especialmente útil para generar estructuras HTML con poco esfuerzo. Visual Studio Code tiene Emmet integrado por defecto, lo que facilita su uso sin necesidad de configuraciones adicionales.
+
+### ⏩ Usando `!` para generar el esqueleto de HTML
+
+1. Crea un nuevo archivo llamado `index2.html` en la misma carpeta.
+2. Ábrelo en Visual Studio Code.
+3. Escribe `!` y presiona la tecla **Tab**.
+4. Se generará automáticamente la estructura base de un documento HTML.
+
+Debería aparecer algo como esto:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+5. Rellena el `<body>` con algunos elementos de texto como hicimos en `index.html`.
+6. Guarda los cambios y ábrelo en el navegador.
+
+## 💾 Configuración de guardado automático en Visual Studio Code
+
+Visual Studio Code permite habilitar el guardado automático de archivos, evitando la necesidad de guardar manualmente después de cada cambio. Para activarlo:
+
+1. Haz clic en **Archivo** en la barra de menú.
+2. Selecciona **Preferencias** → **Configuración**.
+3. En la barra de búsqueda, escribe `files.autoSave`.
+4. En el menú desplegable, elige la opción `afterDelay` para que los archivos se guarden automáticamente después de un breve retraso.
+
+Con esta configuración, los cambios se guardarán automáticamente, evitando posibles pérdidas de trabajo y mejorando la productividad. 🚀
+
+## 🚀 Visualización en el navegador con Visual Studio Code
+
+Una de las formas más eficientes de trabajar con HTML en **Visual Studio Code (VSCode)** es utilizando su servidor de vista previa automática. Esto permite ver los cambios en tiempo real sin necesidad de estar recargando manualmente el navegador. 
+
+### 🔍 Habilitar la vista previa automática
+
+Para abrir la vista previa del archivo HTML directamente en VSCode:
+
+1. **Abrir el archivo HTML** en el editor.
+2. En la esquina superior derecha, busca el botón con un icono de lupa 🔍 y el texto "Vista previa".
+3. **Haz clic en él** y se abrirá una vista previa integrada dentro de VSCode.
+
+### ⌨️ Atajo de teclado
+
+También puedes activar la vista previa usando la combinación de teclas:
+
+- **Windows/Linux:** `Ctrl + K`, luego `V`.
+- **Mac:** `Cmd + K`, luego `V`.
+
+### 🌍 Visualización en un navegador externo
+
+Por defecto, la vista previa se abre dentro de VSCode, pero si prefieres verla en otro navegador:
+
+1. **Copia la URL** de la barra de direcciones de la vista previa integrada.
+2. **Pégala en cualquier navegador** (Chrome, Firefox, Edge, etc.).
+3. Cada vez que guardes (`Ctrl + S` / `Cmd + S`), la página se actualizará automáticamente.
+
+### 💡 Beneficio principal
+
+Gracias a esta funcionalidad, **cada cambio en el código HTML se reflejará de inmediato**, mejorando la productividad y facilitando la corrección de errores de manera más eficiente. 🎯
+
+## 📌 Comenzamos a diseñar
+
+A partir de ahora vamos a ir probando cada uno de los elementos de HTML
+
+Las etiquetas de HTML se pueden colocar en distintas zonas, pero nosotros en este laboratorio lo vamos a colocar dentro del `<body>`.
 
 
-<div style="text-align: center;">
-  <img src="img/04 - Response.PNG" alt="Response">
-</div>
+## 🔢 Headings en HTML
 
-Podemos observar:
+Los **headings** en HTML son los títulos y subtítulos de una página web. Se definen con las etiquetas `<h1>` a `<h6>`, donde `<h1>` representa el título más importante y `<h6>` el menos relevante.
 
-- El código de estado de la respuesta (200 OK).
-- La duración de la solicitud.
-- El body de la respuesta en formato JSON.
-- Otras pestañas como **Headers**, **Cookies**, **Tests Results**, etc.
+### Estructura de los Headings
 
-Vamos a pinchar en "Headers" para ver los encabezados de la respuesta.
+Cada página debe tener un único `<h1>`, que representa el título principal. A partir de ahí, los subtítulos se organizan jerárquicamente:
 
-<div style="text-align: center;">
-  <img src="img/05 - Response headers.PNG" alt="Response">
-</div>
+```html
+<h1>Título Principal</h1>
+<h2>Subtítulo de nivel 2</h2>
+<h3>Subtítulo de nivel 3</h3>
+<h4>Subtítulo de nivel 4</h4>
+<h5>Subtítulo de nivel 5</h5>
+<h6>Subtítulo de nivel 6</h6>
+```
+
+⚠ **Importante**: No utilices los headings solo para hacer el texto más grande o más pequeño. Su propósito es estructurar el contenido de manera semántica.
+
+### Creación rápida con Emmet ⚡
+
+En Visual Studio Code, puedes generar rápidamente headings usando **Emmet**. Solo tienes que escribir la etiqueta y presionar `Tab`:
+
+- `h1` + `Tab` → `<h1></h1>`
+- `h2{Mi título}` + `Tab` → `<h2>Mi título</h2>`
+- `h1+h2+h3` + `Tab` →
+
+```html
+<h1></h1>
+<h2></h2>
+<h3></h3>
+```
+
+Prueba a escribir `h1{Título Principal}+h2{Subtítulo}` y presionar `Tab`. ¡Se generará automáticamente el código con texto incluido! 🚀
+
+### 🏗 Buenas prácticas
+
+✅ Usa `<h1>` solo una vez por página.
+✅ Sigue una jerarquía lógica, sin saltarte niveles.
+✅ Usa headings para mejorar la accesibilidad y el SEO.
+
+Prueba a escribir y modificar los headings en tu archivo HTML y observa los cambios en Live Server. ¡Vamos a estructurar bien el contenido! 😃
 
 
-## 🗒 Crear una nueva request en Postman para acceder a una web HTML
+## 🔖 Párrafos y enlaces en HTML
 
-Para realizar una solicitud GET en Postman y descargar el HTML de una página web, sigue estos pasos:
+En HTML, los párrafos se crean con la etiqueta `<p>`. Cada párrafo comienza con `<p>` y finaliza con `</p>`. Los navegadores web interpretan estas etiquetas y añaden un salto de línea automático entre cada párrafo.
 
-1. Pulsa en el texto **"Add a request"** o sitúate encima de la colección, haz clic derecho y selecciona **"Add Request"**.
+### Ejemplo de párrafos
 
-<div style="text-align: center;">
-  <img src="img/02 - New Request.PNG" alt="Nueva request">
-</div>
+```html
+<p>Este es un párrafo de ejemplo en HTML.</p>
+<p>Este es otro párrafo, que aparecerá en una línea diferente.</p>
+```
 
-## 🗒 Enviar una Solicitud GET para obtener HTML
+### 👉 Enlaces en HTML
 
-Vamos a realizar una solicitud GET a una página web sencilla para comprobar cómo Postman descarga su contenido en formato HTML. Crea una nueva Request
+Para añadir enlaces en una página web, utilizamos la etiqueta `<a>`, que significa "anchor" (ancla). Esta etiqueta necesita el atributo `href`, donde especificamos la URL a la que queremos dirigirnos.
 
-<div style="text-align: center;">
-  <img src="img/06 - New Request HTML.PNG" alt="New Request HTML">
-</div>
+#### Ejemplo de enlace
 
-1. Ponle un nombre a la request, por ejemplo: **"Get HTML de ejemplo"**.
-2. Selecciona el método **GET**.
-3. Introduce la URL de la página web. Vamos a usar la URL de **example.com**, un sitio de prueba oficial:
+```html
+<p>Visita <a href="https://developer.mozilla.org/es/docs/Web/HTML">la documentación de HTML</a> para aprender más.</p>
+```
+
+🔹 **Nota:** Los enlaces pueden abrirse en la misma pestaña o en una nueva. Si queremos que se abra en una pestaña nueva, añadimos el atributo `target="_blank"`:
+
+```html
+<a href="https://www.w3.org/" target="_blank">Visita la W3C</a>
+```
+
+Esto permitirá que el enlace se abra en una pestaña diferente, sin cerrar la página actual.
+
+## Etiquetas de Formato de Texto en HTML 📝
+
+En HTML, existen varias etiquetas que permiten modificar la apariencia del texto. Aunque muchas veces se usan dentro de elementos como los párrafos (`<p>`), estas etiquetas pueden aplicarse en otros elementos como listas, enlaces, encabezados, y más.
+
+### 📌 Etiquetas de formato de texto
+
+1. **Negrita:**
+   - `<b>`: Aplica un estilo visual de negrita sin enfatizar semánticamente.
+   - `<strong>`: Indica que el texto es importante, además de aplicarle negrita.
 
    ```html
-   https://example.com
+   <p>Este es un <b>texto en negrita</b> y este es <strong>importante</strong>.</p>
    ```
 
-4. Presiona **Send** y observa la respuesta en formato HTML.
+2. **Cursiva:**
+   - `<i>`: Aplica un estilo de letra inclinada sin enfatizar semánticamente.
+   - `<em>`: Indica que el texto debe enfatizarse, además de cursiva.
 
-Nota: ¿sabrías encontrar las HEADERS de la request? 
+   ```html
+   <p>Este es un <i>texto en cursiva</i> y este es <em>enfatizado</em>.</p>
+   ```
 
-### 🔍 Analizando la respuesta
+3. **Subrayado y resaltado:**
+   - `<mark>`: Resalta el texto con un fondo de color (normalmente amarillo).
+   - `<ins>`: Indica que el texto ha sido insertado (suele mostrarse subrayado).
 
-Cuando se envía la solicitud, Postman mostrará la respuesta en formato HTML en la pestaña **Body**.
+   ```html
+   <p>Este es un <mark>texto resaltado</mark> y este es un <ins>texto insertado</ins>.</p>
+   ```
 
-Ejemplo de respuesta:
+4. **Texto pequeño y eliminado:**
+   - `<small>`: Reduce el tamaño del texto.
+   - `<del>`: Indica que el texto ha sido eliminado (se muestra tachado).
 
-<div style="text-align: center;">
-  <img src="img/07 - Response HTML.PNG" alt="HTML Response">
-</div>
+   ```html
+   <p>Este es un <small>texto pequeño</small> y este es un <del>texto eliminado</del>.</p>
+   ```
 
-Podemos observar:
+5. **Subíndices y superíndices:**
+   - `<sub>`: Muestra el texto en subíndice (por ejemplo, fórmulas químicas).
+   - `<sup>`: Muestra el texto en superíndice (por ejemplo, exponentes matemáticos).
 
-- El código de estado de la respuesta (200 OK).
-- La duración de la solicitud.
-- El body de la respuesta con el código HTML de la página.
-- Otras pestañas como **Headers**, **Cookies**, **Tests Results**, etc.
+   ```html
+   <p>H<sub>2</sub>O es la fórmula del agua. 2<sup>3</sup> = 8.</p>
+   ```
 
-Si hacemos clic en la pestaña **Headers**, veremos los encabezados de la respuesta.
+### ✨ Uso en otros elementos
 
-<div style="text-align: center;">
-  <img src="img/08 - HTML Response headers.PNG" alt="HTML Response headers">
-</div>
+Estas etiquetas no están restringidas a los párrafos, sino que pueden usarse en otros elementos:
 
-Los encabezados contienen información adicional, como el tipo de contenido (`Content-Type: text/html`).
+- **Encabezados:**
+  ```html
+  <h1>Este es un <mark>título resaltado</mark></h1>
+  ```
 
-Nota: ¿sabrías encontrar las HEADERS de las requests anteriores? 
+- **Listas:**
+  ```html
+  <ul>
+    <li><strong>Importante:</strong> Leer la documentación.</li>
+    <li><del>Comprar entradas para el cine.</del></li>
+  </ul>
+  ```
 
-## Ejercicios:
+- **Enlaces:**
+  ```html
+  <a href="#">Este es un <em>enlace enfatizado</em></a>
+  ```
 
-1. Realiza una solicitud HEAD a la URL de **example.com** y observa la respuesta. ¿Por qué no tiene body?
-2. Realiza una solicitud PUT a la URL de **https://randomuser.me/api/** y observa la respuesta. Prueba con un POST y DELETE.
+### ⚡ Emmet para agilizar la escritura
 
+Para escribir estas etiquetas más rápido en Visual Studio Code, puedes usar Emmet:
 
-## 🧭 Explorando otras APIS 
+- `p>b{Texto en negrita}` → `<p><b>Texto en negrita</b></p>`
+- `p>em{Texto enfatizado}` → `<p><em>Texto enfatizado</em></p>`
+- `h1>mark{Título resaltado}` → `<h1><mark>Título resaltado</mark></h1>`
+- `ul>li*3>{Elemento $}` → Crea una lista con tres elementos numerados.
 
-Como hemos visto en los ejemplos anteriores, podemos realizar solicitudes a diferentes APIs para obtener datos. Pero en la mayoría de los casos no se puede hacer un POST o DELETE a una API pública, como es lógico, las APIs solo permienten GET.
-
-Vamos a probar con una API de datos públicos y nos permite hacer PUT, POST, DELETE, etc. La API que vamos a usar es: [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/)
-
-Primero visita la página y acostúmbrate a revisar la documentación de la API. Te darás cuenta que existen varios recursos que podemos usar:
-
-
-<div style="text-align: center;">
-
-| Recurso     | Cantidad  |
-|:----------:|:--------:|
-| [`/posts`](https://jsonplaceholder.typicode.com/posts)   | 100 posts  |
-| [`/comments`](https://jsonplaceholder.typicode.com/comments) | 500 comments  |
-| [`/albums`](https://jsonplaceholder.typicode.com/albums)   | 100 albums  |
-| [`/photos`](https://jsonplaceholder.typicode.com/photos)   | 5000 photos  |
-| [`/todos`](https://jsonplaceholder.typicode.com/todos)    | 200 todos  |
-| [`/users`](https://jsonplaceholder.typicode.com/users)    | 10 users  |
-
-
-</div>
-
-
-A todos estos recursos le podremos hacer GET, PUT, POST y DELETE. Obviamente la API no guarda los datos, la gente es muy perversa en internet y podría hacer cosas malas. Pero nos permite hacer pruebas, esto significa que nos acepta la petición, pero no se guardan los datos.
-
-Lo ideal para poder hacer cambios en una API sería tener una API privada, y acceder con una autorización, lo que se conoce como una `API Key`.
-Pero eso ya es otro tema.
-
-
-Vamos a probar con el recurso `/posts`:
+Estas etiquetas son esenciales para mejorar la accesibilidad y la semántica de tu contenido web. 🚀
 
 
-## Ejercicios:
 
-1. Usando Postman, realiza una solicitud GET a la URL de **https://jsonplaceholder.typicode.com/posts** y observa la respuesta. ¿Cuántos posts hay?
-2. Realiza una solicitud POST a la URL de **https://jsonplaceholder.typicode.com/posts** En el BODY de la request deberás añadir el siguiente JSON:
+## 🖼️ Imágenes en HTML
 
-```json
-{
-  "title": "Mi primer post",
-  "body": "Este es mi primer post en la API",
-  "userId": 1
-}
+En HTML, la etiqueta `<img>` se usa para mostrar imágenes en una página web. Es un elemento **vacío**, lo que significa que no tiene una etiqueta de cierre.
+
+### 📌 Sintaxis básica:
+```html
+<img src="imagen.jpg" alt="Descripción de la imagen">
 ```
 
-No te olvides de marcar que será de tipo `RAW` y que el formato es `JSON`.
+### 📌 Atributos principales:
+- **`src`**: Especifica la URL de la imagen.
+- **`alt`**: Proporciona un texto alternativo que se mostrará si la imagen no se carga.
+- **`width` y `height`**: Permiten definir el tamaño de la imagen en píxeles.
 
-Además, que debes informar al servidor sobre la información que le estás enviando. Por lo tanto, deberás añadir (o modificar) una header dónde se informa del contenido que le vamos a mandar:
-
+#### 🎯 Ejemplo:
+```html
+<img src="https://placehold.co/400x400" alt="Imagen de ejemplo" width="150" height="150">
 ```
-Content-type: application/json; charset=UTF-8,
+
+### 📝 Nota
+
+La web [https://placehold.co](https://placehold.co) es un servicio que nos genera imágenes de prueba para colocar en una web. Es como un `lorem ipsum` pero para imágenes. Donde después de la URL, le indicamos el tamaño de la imagen que queremos.
+
+Si te fijas en el ejemplo, la imagen que estamos pidiendo a la web es de 400x400 píxeles, pero la estamos mostrando con un tamaño de 150x150 píxeles. Guarda la relación de aspecto de la imagen pero el tamaño que se muestra es más pequeño.
+
+
+## 🔗 Imágenes con enlaces
+
+Podemos hacer que una imagen actúe como un enlace envolviéndola con la etiqueta `<a>`.
+
+#### 🎯 Ejemplo:
+```html
+<a href="https://www.ejemplo.com">
+    <img src="https://placehold.co/400x400" alt="Haz clic aquí">
+</a>
+```
+En este caso, al hacer clic en la imagen, se redirige al usuario a `https://www.ejemplo.com`.
+
+---
+
+## ⚡ Emmet para imágenes
+Para escribir más rápido en **Visual Studio Code**, podemos usar **Emmet**:
+
+| Expresión | Expansión Automática |
+|-----------|----------------------|
+| `img`     | `<img src="" alt="">` |
+| `img:src` | `<img src="ruta.jpg" alt="">` |
+| `a>img`   | `<a href=""><img src="" alt=""></a>` |
+
+#### 🎯 Ejemplo con Emmet:
+Si escribimos `a>img` y presionamos **Tab**, obtenemos automáticamente:
+```html
+<a href=""><img src="" alt=""></a>
+```
+Después, solo tenemos que completar los atributos.
+
+## Listas en HTML 📝
+
+En HTML, podemos estructurar información en listas para mejorar la organización del contenido. Existen tres tipos principales de listas:
+
+1. **Listas desordenadas (`<ul>`)**
+2. **Listas ordenadas (`<ol>`)**
+3. **Listas de definición (`<dl>` - no la veremos aquí)**
+
+### Listas desordenadas `<ul>` 🔹
+
+Las listas desordenadas presentan los elementos sin un orden específico, generalmente con viñetas:
+
+```html
+<ul>
+    <li>Manzana</li>
+    <li>Banana</li>
+    <li>Cereza</li>
+</ul>
 ```
 
-Puedes darle al bontón `SEND`
+📌 Esto se visualizará con puntos (•) por defecto en la mayoría de los navegadores.
 
-Si todo ha ido correctamente, deberías tener una respuesta de este estilo:
+### Listas ordenadas `<ol>` 🔢
 
-<div style="text-align: center;">
-  <img src="img/09 - Respuesta POST.PNG" alt="Respuesta POST">
+Las listas ordenadas presentan los elementos en un orden numérico o alfabético:
+
+```html
+<ol>
+    <li>Primer paso</li>
+    <li>Segundo paso</li>
+    <li>Tercer paso</li>
+</ol>
+```
+
+📌 Se visualizará con números (`1.` `2.` `3.`) por defecto.
+
+### Uso de Emmet ⚡
+
+Para escribir listas rápidamente en **Visual Studio Code**, podemos usar Emmet:
+
+- Para una lista desordenada con 3 elementos: `ul>li*3` → presiona `Tab`
+- Para una lista ordenada con 5 elementos: `ol>li*5` → presiona `Tab`
+
+Esto generará automáticamente la estructura HTML necesaria, ahorrando tiempo.
+
+¡Ahora prueba a modificar los elementos y observa los cambios con **Live Server**! 🚀
+
+## La etiqueta `<div>` 🏗️
+
+La etiqueta `<div>` es un contenedor genérico en HTML que se utiliza para agrupar otros elementos y estructurar el contenido de una página. No tiene un significado semántico propio, pero es muy útil para organizar elementos dentro del diseño de una web.
+
+### Uso básico 📝
+
+Para crear un contenedor `<div>` en HTML, simplemente se usa la etiqueta de apertura y cierre:
+
+```html
+<div>
+    Contenido dentro del div
 </div>
+```
+
+Este `<div>` no tiene ningún estilo aplicado por defecto, pero podemos añadirle atributos como `id` o `class` para identificarlo y aplicar estilos con CSS posteriormente.
+
+### Creación rápida con Emmet ⚡
+
+Si estás usando Visual Studio Code, puedes utilizar Emmet para generar estructuras de `<div>` de manera rápida.
+
+Ejemplos:
+
+- Para generar un `<div>` con una clase:
+  ```
+  .contenedor
+  ```
+  Esto se expandirá a:
+  ```html
+  <div class="contenedor"></div>
+  ```
+
+- Para generar un `<div>` con un `id`:
+  ```
+  #principal
+  ```
+  Esto se expandirá a:
+  ```html
+  <div id="principal"></div>
+  ```
+
+- Para generar un `<div>` con múltiples clases:
+  ```
+  .caja.roja.bordeado
+  ```
+  Esto se expandirá a:
+  ```html
+  <div class="caja roja bordeado"></div>
+  ```
+
+- Para generar múltiples `<div>` anidados:
+  ```
+  div>div>div
+  ```
+  Se expandirá a:
+  ```html
+  <div>
+      <div>
+          <div></div>
+      </div>
+  </div>
+  ```
+
+### Ejemplo práctico 🌟
+
+Imaginemos que queremos estructurar una página con una cabecera, un contenido principal y un pie de página. Podemos usar `<div>` para organizarlos:
+
+```html
+<div id="contenedor">
+    <div id="cabecera">
+        <h1>Mi página web</h1>
+    </div>
+    <div id="contenido">
+        <p>Bienvenido a mi página. Aquí encontrarás información interesante.</p>
+    </div>
+    <div id="pie">
+        <p>&copy; 2025 Mi Página</p>
+    </div>
+</div>
+```
+
+Esto nos proporciona una estructura clara que luego podremos estilizar con CSS.
+
+Si llevas este código a tu archivo HTML y lo visualizas con **Live Server**, podrás ver no habrá mucha diferencia. Pero cuando apliquemos estilos esto mejorará mucho.
+
+## `<span>` 🏷️
+
+La etiqueta `<span>` se usa para aplicar estilos o manipular una parte específica del texto dentro de un elemento en línea. A diferencia de `<div>`, que es un contenedor en bloque, `<span>` es un contenedor en línea.
+
+### 📌 Características
+- No introduce saltos de línea.
+- Permite aplicar estilos CSS o manipular su contenido con JavaScript.
+- Se usa dentro de párrafos, enlaces y otros elementos en línea.
+
+### ✍️ Uso básico
+
+```html
+<p>Este es un <span style="color: red; font-weight: bold;">texto resaltado</span> dentro de un párrafo.</p>
+```
+
+🔍 En este ejemplo, solo la parte dentro de `<span>` se muestra en rojo y en negrita.
+
+---
+
+### ⚡ Emmet para `<span>`
+En Visual Studio Code puedes usar Emmet para escribir más rápido:
+
+- `span{Texto de ejemplo}` ➡️ Expande a:
+
+```html
+<span>Texto de ejemplo</span>
+```
+
+- `p>{Texto normal }+span{Texto resaltado}` ➡️ Expande a:
+
+```html
+<p>Texto normal <span>Texto resaltado</span></p>
+```
+
+📌 ¡Esto ahorra tiempo y mejora la productividad! 🚀
+
+---
+
+### 🛠️ Ejemplo con múltiples `<span>`
+Si queremos aplicar diferentes estilos a partes de un texto:
+
+```html
+<p>Aprender <span style="color: blue;">HTML</span>, <span style="color: green;">CSS</span> y <span style="color: orange;">JavaScript</span> es esencial para el desarrollo web.</p>
+```
+
+Esto resaltará cada palabra clave en un color diferente.
+
+## `<input>`: Entrada de datos en formularios ⌨️
+
+La etiqueta `<input>` se usa para capturar datos introducidos por el usuario en formularios. Es un elemento fundamental en HTML y puede adoptar diferentes tipos según el atributo `type`.
+
+### Sintaxis básica
+```html
+<input type="text" name="usuario" placeholder="Introduce tu nombre">
+```
+
+### Tipos de `<input>`
+Algunos de los tipos más comunes de la etiqueta `<input>` son:
+
+- `text`: Campo de texto de una línea.
+- `password`: Campo de contraseña (oculta los caracteres).
+- `email`: Para direcciones de correo (valida formato).
+- `number`: Solo permite números.
+- `date`: Selector de fecha.
+- `checkbox`: Casilla de verificación.
+- `radio`: Botón de opción única.
+- `file`: Selector de archivos.
+- `submit`: Botón para enviar el formulario.
+- `reset`: Botón para reiniciar el formulario.
+
+Ejemplo:
+```html
+<form>
+    <input type="text" placeholder="Nombre">
+    <input type="email" placeholder="Correo">
+    <input type="password" placeholder="Contraseña">
+    <input type="submit" value="Enviar">
+</form>
+```
+
+### Emmet para acelerar la escritura
+Emmet permite generar código HTML rápidamente. Algunas abreviaciones útiles para `<input>`:
+
+- `input:text` → `<input type="text">`
+- `input:password` → `<input type="password">`
+- `input:email` → `<input type="email">`
+- `input:checkbox` → `<input type="checkbox">`
+- `input:submit` → `<input type="submit">`
 
 
-3. Vamos a borrar un recurso. Supongamos que queremos eliminar el `POST` con identificador 101. Recuerda que en las APIRest los recursos se identifican en la propia URL. Por lo tanto, debemos realiza una request DELETE a la URL de **https://jsonplaceholder.typicode.com/posts/101** OJO!! fíjate que el identificador lo ponemos a la derecha del recurso indicando el número. 
+### Atributos adicionales importantes
+
+- `name`: Identificador del campo en el formulario.
+- `placeholder`: Texto de ayuda dentro del campo.
+- `required`: Hace obligatorio el campo.
+- `disabled`: Deshabilita el campo.
+- `readonly`: Permite ver el contenido pero no modificarlo.
+- `maxlength`: Límite de caracteres.
+- `pattern`: Expresión regular para validar.
+
+Ejemplo con validación:
+```html
+<input type="text" name="usuario" placeholder="Usuario" required minlength="3" maxlength="15">
+```
+
+## ⚡ Atributos del elemento `<input>`
+
+El elemento `<input>` en HTML permite capturar datos del usuario. Sus atributos modifican su comportamiento. Veamos algunos esenciales:
+
+### 🎛️ Atributos comunes
+
+- **type**: Define el tipo de entrada (texto, número, email, etc.). Ejemplo:
+  ```html
+  <input type="email">
+  ```
+
+- **value**: Especifica el valor por defecto del campo. Ejemplo:
+  ```html
+  <input type="text" value="Hola">
+  ```
+
+- **readonly**: Hace que el campo sea solo lectura.
+  ```html
+  <input type="text" value="Fijo" readonly>
+  ```
+
+- **disabled**: Deshabilita el campo, impidiendo su uso.
+  ```html
+  <input type="text" disabled>
+  ```
+
+- **placeholder**: Muestra un texto de ayuda dentro del campo.
+  ```html
+  <input type="text" placeholder="Escribe aquí">
+  ```
+
+- **required**: Obliga a completar el campo antes de enviar el formulario.
+  ```html
+  <input type="text" required>
+  ```
+
+### 🔢 Atributos numéricos
+
+- **maxlength**: Define la cantidad máxima de caracteres.
+  ```html
+  <input type="text" maxlength="10">
+  ```
+
+- **min** / **max**: Restringen el rango de valores aceptados.
+  ```html
+  <input type="number" min="1" max="100">
+  ```
+
+- **step**: Especifica incrementos de valor.
+  ```html
+  <input type="number" step="5">
+  ```
+
+### 🚀 Usabilidad
+
+- **autofocus**: Activa automáticamente el foco en el campo al cargar la página.
+  ```html
+  <input type="text" autofocus>
+  ```
+
+### ⚡ Emmet para productividad
+
+Para generar rápidamente un campo con estos atributos en Visual Studio Code, usa:
+```emmet
+input[type=text][placeholder=Escribe...][required][maxlength=10]
+```
+Esto expande a:
+```html
+<input type="text" placeholder="Escribe..." required maxlength="10">
+```
+## Comentarios en HTML 📝
+
+Los comentarios en HTML son fragmentos de texto que el navegador ignora al renderizar la página. Son útiles para documentar el código, dejar notas para otros desarrolladores o desactivar temporalmente partes del código sin eliminarlas.
+
+### Sintaxis de un comentario
+
+Un comentario en HTML se escribe entre `<!--` y `-->`:
+
+```html
+<!-- Esto es un comentario en HTML -->
+```
+
+### Uso de comentarios en HTML
+
+1. **Documentación del código** 🗒️  
+   Se pueden usar para explicar el propósito de una sección de código.
    
-   En este caso, no necesitamos de un BODY, y en las cabeceras no tenemos que marcar el tipo de contenido, ya que no estamos enviando nada.
+   ```html
+   <!-- Sección de navegación principal -->
+   <nav>
+       <ul>
+           <li><a href="index.html">Inicio</a></li>
+           <li><a href="about.html">Acerca de</a></li>
+           <li><a href="contact.html">Contacto</a></li>
+       </ul>
+   </nav>
+   ```
 
+2. **Desactivar código temporalmente** 🚫  
+   Si necesitas quitar una parte del código sin borrarla, puedes comentarla:
+   
+   ```html
+   <!-- <p>Este texto está comentado y no se mostrará en la página.</p> -->
+   ```
 
-Si todo ha ido correctamente, deberías tener una respuesta de este estilo:
+3. **Notas para otros desarrolladores** 🛠️  
+   Puedes dejar notas para otros programadores que trabajen en el código:
+   
+   ```html
+   <!-- TODO: Agregar enlaces a redes sociales -->
+   ```
 
-<div style="text-align: center;">
-  <img src="img/10 - Respuesta DELETE.PNG" alt="Respuesta DELETE">
-</div>
+### Atajos con Emmet ⚡
 
+Para escribir comentarios rápidamente en Visual Studio Code, puedes usar la abreviatura de Emmet:
 
-4. Haz todas las pruebas que estimes oportunas con los recursos que te hemos indicado. 
+- **Envolver en un comentario**: Selecciona el texto y presiona `Ctrl + /` (Windows/Linux) o `Cmd + /` (Mac).
+- **Escribir un comentario vacío**: Escribe `!` y presiona `Tab`, luego agrega `<!-- -->` donde necesites.
 
+### Consideraciones
 
-## 🔑 Autenticación en APIs Privadas
+🔹 No se pueden anidar comentarios en HTML. Es decir, lo siguiente **no es válido**:
 
-Algunas APIs requieren autenticación mediante **tokens**. Para enviar una solicitud con autenticación. Normalmente la forma de autenticarse con una API es mediante un token que se envía en la cabecera de la request y se conoce como API Key.
-El API Key es mecanismo distinto al de usuario y contraseña, ya que no se envía en el body de la request, sino en la cabecera.
-
-El API Key te lo tienen que proporcionar, y normalmente se envía en la cabecera de la request con el nombre `Authorization`.
-
-Vamos a hacer pruebas con ello usando:
-
-## 🐱 The Cat API
-
-¿Te gustan los gatos? Espero que si, porque vamos a hacer pruebas con una API de gatos. La API que vamos a usar es: [https://thecatapi.com/](https://thecatapi.com/)
-
-Te Cat API es una API que nos permite trabajar con imágenes de gatos. Y para poder usarla, necesitamos un API Key.
-
-Por lo tanto, lo primero que tenemos que hacer es solicitar un API Key. Para ello, visita la página de [The Cat API](https://thecatapi.com/) y regístrate para obtener tu API Key. Debes pinchar en el botón de `Get API Key` y seguir los pasos.
-
-<div style="text-align: center;">
-  <img src="img/11 - TheCatAPI GetAPIKey.PNG" alt="Get Your API Key">
-</div>
-
-Entiendo que quieres usar la API gratuita, así que pincha en el botón de `GET FREE ACCESS` de la versión gratuita.
-
-Te mandará a una web donde deberás rellenar:
-
-- **Email**, usa un correo válido ya que recibirás un correo con tu API Key, que es personal e instransferible. Es como si fuera una clave. ¿No compartirías tu password, verdad?
-- **App description**, aquí deberías poner una descripción en inglés para lo que lo quieres usar. Por ejemplo, "I'm using it to learn how to use APIs with Postman".
-- **What type of project will you use the API for?**, aquí deberías elegir "School/University Project"
-- No te recomiendo que marques **"I would like to receive occasional emails about new features and updates"** ya que eventualmente te enviarán correos, y a nadie nos gusta que nos llenen el correo con mensajes no deseados.
-- Lo siguiente que debes revisar es tu correo ya que te enviarán un correo con tu API Key. Que como ya sabrás, es personal e instransferible y es un código alfanumérico muy largo.
-- GUARDA CON CARIÑO TU API KEY, ya que la necesitarás para poder hacer las pruebas.
-
-## 📄 Revisar la documentación
-
-Siempre es buena idea revisar la documentación para poder hacer las peticiones siguiendo el estándar de la API. En este caso, la documentación de la API de gatos la puedes encontrar en [la documentación](https://documenter.getpostman.com/view/4016432/RWToRJCq)
-
-
-## Configurar el entorno
-
-Te recomiendo que crees una nueva `Collection` y la llames `The Cat API`  Dentro de esta colección, crea todas las request que necesitemos para poder trabajar con la API de gatos.
-
-La base de todas las llamadas será: `https://api.thecatapi.com/v1/`
-
-A la derecha tendremos los recursos que podemos usar: como por ejemplo `images`, `breeds`, `categories`, etc.
-
-La unión de la base y el recurso nos dará la URL que se llama **`endpoint`** y que es la que debemos usar en nuestras request.
-
-## Request: Buscar imágenes de gatos
-
-**Verbo HTTP**: GET
-
-**Endpoint**: `https://api.thecatapi.com/v1/images/search`
-
-Con esto podríamos hacer una búsqueda. No es necesario poner la API Key ni pasar más parámetros.
-
-Prueba a realizar una request GET a la URL de **https://api.thecatapi.com/v1/images/search** y observa la respuesta. ¿Qué te devuelve?
-
-Obtendrás algo como:
-
-```json
-[
-    {
-        "id": "868",
-        "url": "https://cdn2.thecatapi.com/images/868.jpg",
-        "width": 728,
-        "height": 522
-    }
-]
-```	
-
-Si pinchas en la URL, en `Postman` creará otra request para ver la imagen. El resultado que devuelve es aleatorio, a tí te devolverá un distinto al mío y distinto al de tus compañeros. Bueno, hay una pequeña probabilidad de que sea el mismo, pero es muy baja.
-
-### Vamos a parametrizar la Request
-
-En la `Request` que acabamos de hacer, vamos a parametrizarla para que podamos hacer búsquedas de imágenes de tamaño concreto.
-
-Tenemos los siguientes parámetros:
-
-| Key          | Required | Description |
-|-------------|----------|-------------|
-| size        | optional | The size of image to return - `small`, `med` or `full`. `small` is perfect for Discord. Defaults to `med`. |
-| mime_types  | optional | Comma-delimited string of the image types to return: `gif`, `jpg`, or `png`. Defaults to return all types `jpg,gif,png`. |
-| format      | optional | Response format: `json` or `src`. `src` will redirect straight to the image, making it useful for embedding in an `img` tag. Defaults to `json`. |
-| order       | optional | The order to return results in: `RANDOM`, `ASC`, or `DESC`. If `ASC` or `DESC` is passed, pagination headers will be included in the response. Default is `RANDOM`. |
-| page        | optional | Integer - used for paginating through results. Only used when `order` is `ASC` or `DESC`. |
-| limit       | optional | Integer - number of results to return. Without an API Key, you can only pass `1`. With a Key, you can pass up to `25`. Default is `1`. |
-| category_ids | optional | Comma-delimited string of integers matching the IDs of the categories to filter the search. These categories can be found in the `/v1/categories` request. e.g., `category_ids=2`. |
-| breed_ids   | optional | Comma-delimited string of integers matching the IDs of the breeds to filter the search. These breeds can be found in the `/v1/breeds` request. |
-| has_breeds  | optional | Only return images with breed data attached. Integer: `0` or `1`. Default is `0`. |
-
-
-Nosotros vamos a usar el parámetro `size` para poder hacer búsquedas de imágenes de tamaño concreto. Y pondremos el valor 'small' para que nos devuelva imágenes pequeñas.
-
-Eso lo añadiremos en `Query Params` y pondremos `size` como `Key` y `small` como `Value`.
-
-Prueba a ejecutar la request y observa la respuesta. ¿Qué te devuelve? De que tamaño es la imagen?
-
-## 🗒 Enviar una Solicitud POST con Datos
-
-El objetivo es subir una imagen de un gato a la API. Para ello, necesitamos una imagen de un gato. Puedes buscarla en cualquier buscador de imágenes en internet o subir una foto de tu gato, eso sería lo ideal 😸
-
-Aquí vamos a tener que usar la API Key que hemos obtenido anteiormente, ya que necesitamos autenticarnos para poder subir la imagen.
-
-Vamos a componer una nueva Request de tipo POST para subir una imagen de un gato a la API.
-
-
-**Verbo HTTP**: POST
-
-**Endpoint**: `https://api.thecatapi.com/v1/images/upload`
-
-**En la sección headers**
-
-**x-api-key**: `tu chorizo de API Key`
-
-**En la sección body**
-
-Debes marcar la opción `form-data` y añadir una nueva key con el nombre `file`, el tipo debes cambiarlo de 'text' a 'file' y seleccionar la imagen que quieres subir buscándola donde la hubieras guardado.
-
-Puedes apretar el botón `SEND` y observar la respuesta. ¿Qué te devuelve?
-
-Si todo ha ido de manera correcta recibirás un código `201 Created` y un JSON con la información de la imagen que has subido con la siguiente forma:
-
-```json
-{
-  "id":"MTQwUA4X3",
-  "url":"https://cdn2.thecatapi.com/images/MTQwUA4X3.jpg",
-  "width":2500,
-  "height":1667,
-  "original_filename":"gato.jpg",
-  "pending":0,
-  "approved":1
-}
+```html
+<!-- Esto es un comentario <!-- anidado --> y causará errores. -->
 ```
 
-Si te fijas, ahora puedes buscar por tu imagen en la URL que te devuelve la API. En mi caso, la URL es `https://cdn2.thecatapi.com/images/MTQwUA4X3.jpg` pero en tu caso tendrás una diferente.
+🔹 Los comentarios no deben usarse para ocultar código JavaScript o CSS en archivos externos, ya que no es una práctica recomendada.
 
-Te invito a que pinches en la URL para que Postman monte una Request de tipo Get para ver la imagen. 
 
-¿Qué te parece tu gato?
+## 🎨 El atributo `style`
 
-¿Has conseguido llegar hasta este punto?
+El atributo `style` en HTML permite aplicar estilos CSS directamente a un elemento sin necesidad de utilizar una hoja de estilos externa. Se puede utilizar en prácticamente cualquier etiqueta HTML y es útil para definir estilos específicos sin modificar archivos CSS.
+
+### 🏷️ ¿Dónde se puede usar?
+El atributo `style` se puede aplicar a **casi cualquier elemento HTML**, incluyendo:
+- **Texto:** `<p>`, `<h1>`, `<h2>`, `<span>`
+- **Listas:** `<ul>`, `<ol>`, `<li>`
+- **Imágenes y multimedia:** `<img>`, `<video>`, `<audio>`
+- **Contenedores:** `<div>`, `<section>`, `<article>`
+- **Tablas:** `<table>`, `<tr>`, `<td>`
+- **Botones y formularios:** `<button>`, `<input>`, `<form>`
+
+⚠️ Aunque `style` es poderoso, **se recomienda utilizar CSS en hojas de estilo externas** para mantener el código más limpio y fácil de mantener.
+
+---
+
+### ✏️ Ejemplos de uso
+
+#### 📌 Estilizar un párrafo
+```html
+<p style="color: blue; font-size: 20px;">Este es un párrafo en color azul con tamaño de fuente 20px.</p>
+```
+
+#### 🖼️ Modificar una imagen
+```html
+<img src="imagen.jpg" alt="Ejemplo" style="width: 300px; border: 2px solid red;">
+```
+
+#### 📋 Dar estilo a una lista
+```html
+<ul style="list-style-type: square; color: green;">
+    <li style="font-weight: bold;">Elemento 1</li>
+    <li>Elemento 2</li>
+    <li style="text-decoration: underline;">Elemento 3</li>
+</ul>
+```
+
+#### 🔠 Personalizar un encabezado
+```html
+<h1 style="background-color: yellow; text-align: center; padding: 10px;">Encabezado Destacado</h1>
+```
+
+---
+
+### ⏩ Mejora tu productividad con **Emmet**
+En **Visual Studio Code**, puedes escribir código más rápido usando **Emmet**:
+
+```html
+p[style="color:red;"]{Este es un párrafo rojo.}
+```
+🔹 Esto se expande automáticamente a:
+```html
+<p style="color:red;">Este es un párrafo rojo.</p>
+```
+
+🏆 **Consejo:** Usa `style` solo para modificaciones rápidas. Para proyectos grandes, ¡usa CSS externo! 🎨
+
+## Botones en HTML ⏬
+
+Los botones en HTML se crean con la etiqueta `<button>`. Son elementos interactivos que permiten a los usuarios hacer clic para ejecutar una acción, como enviar un formulario o activar una funcionalidad en JavaScript.
+
+### Uso básico
+
+```html
+<button>Haz clic aquí</button>
+```
+
+Esto generará un botón con el texto "Haz clic aquí".
+
+### Atributos comunes
+
+- `type`: Define el tipo de botón.
+  - `submit`: Envía el formulario al que pertenece.
+  - `reset`: Reinicia los valores del formulario.
+  - `button`: No tiene comportamiento predeterminado.
+
+Ejemplo de un botón de envío:
+
+```html
+<button type="submit">Enviar</button>
+```
+
+### Uso con Emmet ⚡
+
+Para crear rápidamente un botón con texto, puedes usar la abreviatura de Emmet:
+
+```
+button{Haz clic aquí}
+```
+
+Esto se expandirá automáticamente a:
+
+```html
+<button>Haz clic aquí</button>
+```
+
+Si necesitas un botón con un `type` específico, puedes hacerlo con:
+
+```
+button[type=submit]{Enviar}
+```
+
+Que generará:
+
+```html
+<button type="submit">Enviar</button>
+```
+
+### Botones dentro de formularios
+
+Los botones son especialmente útiles dentro de formularios:
+
+```html
+<form>
+    <input type="text" placeholder="Escribe algo">
+    <button type="submit">Enviar</button>
+</form>
+```
+
+
+
+## `<script>` 📜
+
+La etiqueta `<script>` se usa en HTML para incluir código JavaScript en nuestras páginas web. Aunque todavía no hemos visto JavaScript en profundidad, es importante conocer cómo se añade y cómo afectan ciertos atributos a su carga.
+
+### Uso básico
+
+Podemos escribir JavaScript directamente dentro de la etiqueta `<script>`, pero lo más común es enlazar un archivo externo:
+
+```html
+<script src="scripts/main.js"></script>
+```
+
+Nota: este script lo vamos a meter en una carpeta llamada `scripts` y el archivo se llamará `main.js`.	Es una práctica muy recomendable separar el código JavaScript del HTML.
+
+### Ubicación en el documento
+
+El lugar donde colocamos `<script>` en el HTML influye en la carga y ejecución de la página. Para mejorar el rendimiento, se recomienda colocarlo antes de `</body>`:
+
+```html
+<body>
+    <h1>Hola mundo</h1>
+    <script src="scripts/main.js"></script>
+</body>
+```
+
+### Atributos `defer` y `async` ⚡
+
+Estos atributos controlan cómo se carga y ejecuta el script externo.
+
+#### `defer`
+- Descarga el script en segundo plano mientras se carga el HTML.
+- Se ejecuta solo después de que el HTML esté completamente analizado.
+- Mantiene el orden de ejecución si hay varios scripts con `defer`.
+
+```html
+<script src="scripts/main.js" defer></script>
+```
+
+#### `async`
+- Descarga el script en segundo plano mientras se carga el HTML.
+- Se ejecuta tan pronto como termine de descargarse, sin esperar a que el HTML esté completo.
+- No mantiene el orden de ejecución si hay varios scripts.
+
+```html
+<script src="scripts/main.js" async></script>
+```
+
+### Ejemplo práctico 📝
+
+Creamos un archivo `scripts/main.js` con este código:
+
+```js
+console.log("¡Hola desde scripts/main.js!");
+```
+
+Y lo enlazamos en el HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Script</title>
+</head>
+<body>
+    <h1>Ejemplo de carga de scripts</h1>
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>
+```
+
+🚀 **Recomendación:** Usa `defer` en la mayoría de los casos para garantizar que el HTML se procese primero antes de ejecutar el script.
+
+
+## `<meta>` 🏷️
+
+La etiqueta `<meta>` se utiliza para proporcionar metadatos sobre el documento HTML. Los metadatos no se muestran en la página, pero son esenciales para los navegadores y motores de búsqueda.
+
+### 📌 Sintaxis básica
+```html
+<meta atributo="valor">
+```
+
+### 🛠️ Uso común de `<meta>`
+
+1. **Definir el conjunto de caracteres** (Evita problemas con acentos y caracteres especiales):
+
+   ```html
+   <meta charset="UTF-8">
+   ```
+
+2. **Configurar la vista en dispositivos móviles** (Asegura que el sitio sea responsive):
+
+   ```html
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   ```
+
+3. **Descripción del sitio** (Mejora el SEO en los resultados de búsqueda):
+
+   ```html
+   <meta name="description" content="Esta es una página de ejemplo sobre la etiqueta meta en HTML.">
+   ```
+
+4. **Palabras clave** (Aunque ya no es tan relevante para SEO):
+
+   ```html
+   <meta name="keywords" content="HTML, meta, SEO, web">
+   ```
+
+5. **Autor del documento**:
+
+   ```html
+   <meta name="author" content="Tu Nombre">
+   ```
+
+6. **Refrescar o redirigir la página** (Ejemplo: recargar cada 5 segundos o redirigir tras un tiempo):
+
+   ```html
+   <meta http-equiv="refresh" content="5; url=https://ejemplo.com">
+   ```
+
+---
+
+### ⚡ Uso de Emmet para `<meta>`
+
+Visual Studio Code permite generar etiquetas `<meta>` rápidamente con Emmet. Aquí algunos atajos útiles:
+
+- **`meta:vp`** ➝ `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+- **`meta:utf`** ➝ `<meta charset="UTF-8">`
+- **`meta:desc`** ➝ `<meta name="description" content="">`
+- **`meta:kw`** ➝ `<meta name="keywords" content="">`
+- **`meta:author`** ➝ `<meta name="author" content="">`
+
+✏️ **Ejemplo con Emmet**:
+
+Si escribes `meta:desc` en Visual Studio Code y presionas `Tab`, generará automáticamente:
+
+```html
+<meta name="description" content="">
+```
+
+---
+
+### 🔍 Recomendaciones
+✅ Usa `<meta charset="UTF-8">` siempre para evitar problemas de codificación.<br>
+✅ Define el `viewport` para que tu página sea adaptable a dispositivos móviles.<br>
+✅ Añade una descripción relevante para mejorar el posicionamiento en buscadores.<br>
 
