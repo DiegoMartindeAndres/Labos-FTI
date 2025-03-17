@@ -86,13 +86,15 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 
 ### 🔑 Introducir la contraseña  
-Después, se te pedirá la contraseña de tu usuario.  
-Escríbela y presiona `Enter`.
+- Después, se te pedirá la contraseña la contraseña es `cambialaclaveya`
+- Escríbela y presiona `Enter`.
 
 ⚠ **IMPORTANTE:**  
 - No verás asteriscos ni caracteres al escribir la contraseña.  
 - Esto es completamente normal en SSH.  
 - Solo escribe tu contraseña y presiona `Enter`.  
+- No olvides cambiar tu contraseña en cuanto te conectes!! Para ello debes usar el comando `passwd` y seguir las instrucciones. Debes elegir una contraseña robusta, segura y no repetida. 
+- Si alguien entra en su servidor y hace algo malintencionado, la responsabilidad recaerá sobre ti.
 
 Si tienes una respuesta por consola con la siguiente aspecto:
 
@@ -148,7 +150,7 @@ Host key verification failed. Do you want to continue? (Yes/No)
 ✅ Selecciona **Yes** para continuar.
 
 ### 🔑 Introducir la contraseña  
-Cuando se solicite, introduce tu contraseña y presiona `Enter`.  
+Cuando se solicite, introduce tu contraseña y presiona `Enter`.  (La primera contraseña es `cambialaclaveya`, pero debes cambiarla en cuanto te conectes)
 ⚠ **Recuerda:** No se mostrarán caracteres mientras la escribes, pero se está registrando.
 
 
