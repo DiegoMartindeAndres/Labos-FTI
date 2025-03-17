@@ -42,8 +42,7 @@ Para conectarte a la VM, necesitarás los datos de acceso que te han sido propor
 - **🌍 Dirección URL** → Se usa tanto para la conexión **SSH** como para acceder al servicio web vía **HTTP**.  
 - **🔐 Puerto SSH** → Necesario para establecer una conexión segura con la VM.  
 - **🌐 Puerto HTTP** → Permite visualizar el servicio web desde un navegador.  
-- **👤 Usuario** → Nombre de usuario asignado para la conexión.  
-- **🔑 Contraseña** → Clave de acceso a la máquina virtual.  
+- **🔑 Contraseña** → De inicio siempre será: "cambialaclaveya" y eso significa que debes cambiarla cuanto antes.
 
 ⚠️ **Importante**:  
 1. Si no tienes esta información, contacta con tu profesor para que te la proporcione.  
@@ -73,7 +72,10 @@ ssh -p PUERTO_SSH usuario@virtual.infor.uva.es
 
 📌 **Parámetros a modificar**:  
 - **PUERTO_SSH**: Número de puerto para la conexión SSH.  
-- **usuario**: Tu nombre de usuario asignado.
+
+📌 **Parámetros que NO DEBES modificar**:  
+- **usuario**: debes dejar literalmente "usuario@virtual.infor.uva.es"
+
 
 ### 🔐 Primera conexión: aceptar la clave del servidor  
 Si es la primera vez que te conectas, SSH te pedirá que confirmes la autenticidad del servidor con un mensaje similar a:
@@ -131,7 +133,7 @@ Ejecuta **MobaXterm** y accede a la pantalla principal.
    ```
    virtual.infor.uva.es
    ```
-3. En **Specify username**, introduce tu usuario asignado.  
+3. En **Specify username**, introduce "usuarioa".  
 4. En **Port**, introduce el **PUERTO_SSH** correspondiente.  
 
 <div align="center">
@@ -184,8 +186,7 @@ usuario@labFTI-10:~$
 
 Como podrás comprobar tienes un panel a la izquierda que te permite subir y bajar archivos, lo cual es muy util e interesante cuando estamos trabajando con servidores remotos.
 
-Aquí tienes el inicio del manual en Markdown:  
-
+No olvides cambiar tu contraseña nada más entrar con el comando `passwd` y seguir las instrucciones.
 
 # 🐧 Comandos básicos de Linux
 
