@@ -188,6 +188,40 @@ Como podrás comprobar tienes un panel a la izquierda que te permite subir y baj
 
 No olvides cambiar tu contraseña nada más entrar con el comando `passwd` y seguir las instrucciones.
 
+## 🔹 **Ejecutando Comandos en una Consola Remota SSH**  
+
+Una vez conectado a la máquina virtual a través de SSH, puedes ejecutar comandos como si estuvieras trabajando en una terminal local de Linux. Sin embargo, hay algunas diferencias en la forma en que se copian y pegan textos, dependiendo del sistema operativo y la herramienta utilizada.
+
+---
+
+### 📋 **Copiar y pegar en una consola SSH**  
+
+El manejo del **portapapeles** en una conexión SSH puede variar dependiendo de si estás usando **Windows**, **Linux** o **macOS**, así como si te conectas desde una terminal de comandos o desde **MobaXterm**.
+
+### **📌 En Windows (MobaXterm y Git Bash)**
+✅ **Para copiar texto desde la consola remota:**  
+- Solo necesitas **seleccionar** el texto con el ratón.  
+- Automáticamente se copia al portapapeles.  No es necesario pulsar **Ctrl + C**.
+
+✅ **Para pegar texto en la consola remota:**  
+- Basta con **hacer clic con el botón derecho** del ratón.  
+- El contenido del portapapeles se pegará en la terminal.  No es necesario pulsar **Ctrl + V**.
+
+💡 **Nota:** En algunos casos, **Ctrl + V no funciona** en una terminal SSH en Windows.  
+
+---
+
+### **📌 En Linux/macOS (Terminal nativa)**
+✅ **Para copiar texto desde la consola remota:**  
+- Usa **Ctrl + Shift + C** o **Cmd + C** (en macOS) para copiar.  
+
+✅ **Para pegar texto en la consola remota:**  
+- Usa **Ctrl + Shift + V** o **Cmd + V** (en macOS) para pegar.  
+- Alternativamente, puedes hacer clic derecho y seleccionar **Pegar**.  
+
+💡 **Nota:** En macOS/Linux, seleccionar texto no lo copia automáticamente al portapapeles como en MobaXterm en Windows.
+
+
 # 🐧 Comandos básicos de Linux
 
 En este apartado, vamos a ver los comandos esenciales de Linux que necesitaremos para instalar y desplegar nuestro servidor web. Si quieres profundizar más, puedes consultar [este manual completo de comandos Linux](https://linuxcommand.org/).
