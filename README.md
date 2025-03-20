@@ -23,7 +23,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo:
    1. [Laboratorio 01.1: **Postman**](/labo01.1//README.md)
 2. [Laboratorio 02: **HTML**](/labo02/README.md)
 3. [Laboratorio 03: **CSS**](/labo03/README.md)
-4. Laboratorio 04: **Bootstrap** (📅 Próximamente)
+4. [Laboratorio 04: **Bootstrap**](/labo04/README.md)
 5. Laboratorio 05: **DOM** (🔜 Próximamente)
 6. Laboratorios 06: **JavaScript** (🚀 Próximamente)
    1. Laboratorio 06.1: **JavaScript 1** (🕰️ Próximamente)
