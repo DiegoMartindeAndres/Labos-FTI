@@ -169,9 +169,13 @@ Las escalas Fahrenheit y Celsius son dos sistemas de medida de temperatura ampli
 
 Las fórmulas de conversión son:
 - De Fahrenheit a Celsis:
-  \[ C = \frac{5}{9} \times (F - 32)\]
+  $$
+  C = \frac{5}{9} \times (F - 32)
+  $$
 - De Celsius a Fahrenhet:
-  \[ F = C \times \frac{9}{5} + 32\]
+  $$
+  F = C \times \frac{9}{5} + 32
+  $$
 
 ### 📥 Entrada esperaa
 
