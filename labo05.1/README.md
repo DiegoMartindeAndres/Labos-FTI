@@ -168,14 +168,17 @@ Las escalas Fahrenheit y Celsius son dos sistemas de medida de temperatura ampli
 - **Fahrenheit**: En esta escala, el agua se congela a 32 grados y hierve a 212 grads.- **Celsius**: En esta escala, el agua se congela a 0 grados y hierve a 100 grads.
 
 Las fórmulas de conversión son:
-- De Fahrenheit a Celsis:
-  $$
-  C = \frac{5}{9} \times (F - 32)
-  $$
-- De Celsius a Fahrenhet:
-  $$
-  F = C \times \frac{9}{5} + 32
-  $$
+- De Fahrenheit a Celsius:
+
+```math
+C = \frac{5}{9} \times (F - 32)
+```
+
+- De Celsius a Fahrenheit:
+
+```math
+F = C \times \frac{9}{5} + 32
+```
 
 ### 📥 Entrada esperaa
 
