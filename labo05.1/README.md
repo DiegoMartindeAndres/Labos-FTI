@@ -510,7 +510,7 @@ En este ejercicio, desarrollarás una función en JavaScript que toma una cadena
 **Salida**
 
 ```
-"kBwBtBdsJqU"
+"kBwBtdsJqU"
 ```
 
 
