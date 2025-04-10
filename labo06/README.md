@@ -571,7 +571,8 @@ Este código hace lo siguiente:
 <details>
   <summary>¿No sabes cómo hacerlo? 🤔</summary>
 <br>
-```js
+
+   ```js
   const botonFondo = document.getElementById('cambiar-fondo');
 
   function colorAleatorio() {
@@ -589,6 +590,7 @@ Este código hace lo siguiente:
     console.log(`Color de fondo cambiado a ${nuevoColor}`);
   });
 ```
+
 </details>
 <br>
 
