@@ -19,16 +19,15 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo:
 
 ## 📝 Tabla de contenidos
 
-1. [Laboratorio 01: **HTTP**](/labo01/README.md)
-   1. [Laboratorio 01.1: **Postman**](/labo01.1//README.md)
-2. [Laboratorio 02: **HTML**](/labo02/README.md)
-3. [Laboratorio 03: **CSS**](/labo03/README.md)
-4. [Laboratorio 04: **Bootstrap**](/labo04/README.md)
+1. [Laboratorio 01: **HTTP**](labo01/README.md)
+   1. [Laboratorio 01.1: **Postman**](labo01.1//README.md)
+2. [Laboratorio 02: **HTML**](labo02/README.md)
+3. [Laboratorio 03: **CSS**](labo03/README.md)
+4. [Laboratorio 04: **Bootstrap**](labo04/README.md)
 5. Laboratorios 05: **JavaScript** 
-   1. [Laboratorio 05.1: **JavaScript básico**](/labo05.1/README.md)
-   2. [Laboratorio 05.2: **JavaScript OO y programación asíncrona**](/labo05.2/README.md)
-   3. Laboratorio 05.3: **JavaScript 3** (🔄 Próximamente)
-6. Laboratorio 06: **DOM** (🔜 Próximamente)
+   1. [Laboratorio 05.1: **JavaScript básico**](labo05.1/README.md)
+   2. [Laboratorio 05.2: **JavaScript OO y programación asíncrona**](labo05.2/README.md)
+6. [Laboratorio 06: **DOM y BOM**](labo06/README.md)
 7. Laboratorio 07: **JQuery** (🏗️ Próximamente)
 8. Laboratorio 08: **AJAX** (👀 Próximamente)
 9. Laboratorio 09: **Fetch** (⏭️ Próximamente)
