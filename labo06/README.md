@@ -571,8 +571,24 @@ Este código hace lo siguiente:
 <details>
   <summary>¿No sabes cómo hacerlo? 🤔</summary>
 <br>
+```js
+  const botonFondo = document.getElementById('cambiar-fondo');
 
+  function colorAleatorio() {
+    const letras = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letras[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
+  botonFondo.addEventListener('click', () => {
+    const nuevoColor = colorAleatorio();
+    document.body.style.backgroundColor = nuevoColor;
+    console.log(`Color de fondo cambiado a ${nuevoColor}`);
+  });
+```
 </details>
 <br>
 
