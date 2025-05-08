@@ -28,7 +28,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo:
    1. [Laboratorio 05.1: **JavaScript básico**](labo05.1/README.md)
    2. [Laboratorio 05.2: **JavaScript OO y programación asíncrona**](labo05.2/README.md)
 6. [Laboratorio 06: **DOM y BOM**](labo06/README.md)
-7. Laboratorio 07: **JQuery** y **AJAX** (labo07/README.md)
+7. [Laboratorio 07: **JQuery** y **AJAX**](labo07/README.md)
 8. Laboratorio 08: **Fetch** (⏭️ Próximamente)
 9.  Laboratorio 09: **Frameworks** (🔥 Próximamente)
 
