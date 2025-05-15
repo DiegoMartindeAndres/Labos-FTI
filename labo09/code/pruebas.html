@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="respuesta">Aquí irá la respuesta</p>
+    <button onclick="obtenerNombrePais()">Obtener nombre del país</button>
+
+    <script>
+        function obtenerNombrePais() {
+            fetch('https://restcountries.com/v3.1/name/spain')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("respuesta").textContent = data[0].name.common;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById("respuesta").textContent = 'Error al obtener los datos.';
+                });
+        }
+    </script>
+</body>
+</html>
